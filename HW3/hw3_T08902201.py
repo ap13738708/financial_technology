@@ -63,7 +63,7 @@ history = model.fit(x_train[:, :, :, np.newaxis],
                     callbacks=[checkpointer],
                     validation_split=0.2)
 
-model.save('cnn.h5')
+# model.save('cnn.h5')
 # model.load_weights('best_weights.hdf5')
 # Plot learning curve
 
@@ -85,7 +85,7 @@ ax4[1].plot(history.history['loss'])
 ax4[1].plot(history.history['val_loss'])
 ax4[1].set_title('Model loss')
 ax4[1].set(ylabel='Loss', xlabel='Epoch')
-ax4[1].legend(['Train', 'Validation'], loc='upper left')
+ax4[1].legend(['Train', 'test'], loc='upper left')
 # Prediction
 
 predictions = model.predict(x_test[:, :, :, np.newaxis])
